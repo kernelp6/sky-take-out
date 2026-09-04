@@ -2,12 +2,18 @@ package com.sky.interceptor;
 
 import com.sky.constant.JwtClaimsConstant;
 import com.sky.context.BaseContext;
+import com.sky.dto.DishPageQueryDTO;
+import com.sky.dto.EmployeeDTO;
+import com.sky.dto.EmployeePageQueryDTO;
 import com.sky.properties.JwtProperties;
+import com.sky.result.PageResult;
+import com.sky.result.Result;
 import com.sky.utils.JwtUtil;
 import io.jsonwebtoken.Claims;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 import javax.servlet.http.HttpServletRequest;
@@ -49,4 +55,7 @@ public class JwtTokenAdminInterceptor implements HandlerInterceptor {
             return false;
         }
     }
+
+
+
 }
