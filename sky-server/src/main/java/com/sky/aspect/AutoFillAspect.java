@@ -47,6 +47,7 @@ public class AutoFillAspect {
         //判断类型
         if(operationType == OperationType.INSERT){
             try {
+                //反射
                 Method setCreateTime = entity.getClass().getDeclaredMethod(AutoFillConstant.SET_CREATE_TIME, LocalDateTime.class);
                 Method setCreateUser = entity.getClass().getDeclaredMethod(AutoFillConstant.SET_CREATE_USER, Long.class);
                 Method setUpdateTime = entity.getClass().getDeclaredMethod(AutoFillConstant.SET_UPDATE_TIME, LocalDateTime.class);
@@ -57,6 +58,7 @@ public class AutoFillAspect {
                 setUpdateTime.invoke(entity,now);
                 setUpdateUser.invoke(entity,currentId);
             }catch (Exception e){
+                //输出问题路径
                 e.printStackTrace();
             }
 

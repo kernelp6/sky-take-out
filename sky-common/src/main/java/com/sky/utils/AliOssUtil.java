@@ -20,6 +20,7 @@ public class AliOssUtil {
     private String bucketName;
 
 
+
     public String upload(byte[] bytes, String objectName) {
 
         // 创建OSSClient实例。
