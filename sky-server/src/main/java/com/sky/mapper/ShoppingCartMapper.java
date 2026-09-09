@@ -11,6 +11,8 @@ import java.util.List;
 @Mapper
 public interface ShoppingCartMapper {
 
+
+
     List<ShoppingCart> list(ShoppingCart shoppingCart);
 
 
